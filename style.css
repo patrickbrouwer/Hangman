@@ -1,0 +1,181 @@
+@import "https://fonts.googleapis.com/css?family=Boogaloo";
+
+/* Elements after a floating element will flow around it. Use the "clearfix" hack to fix the problem */
+.clearfix {
+  content: "";
+  display: block;
+  overflow: hidden;
+}
+
+body {
+  background: #3b4163;
+  font-family: "Boogaloo", sans-serif, cursive;
+  padding: 2.5% 5%;
+  text-transform: uppercase;
+}
+
+.guess,
+.restart {
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  background: #4d69fa;
+  padding: 15px;
+  border-radius: 5px;
+  display: inline-block;
+  border: none;
+  transition: all 0.4s ease 0s;
+}
+
+.guess:hover {
+  background: #a0379b;
+  letter-spacing: 1px;
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  box-shadow: 5px 40px -10px rgba(0, 0, 0, 0.57);
+  transition: all 0.4s ease 0s;
+}
+
+.restart:hover {
+  background: rgb(112, 187, 112);
+  letter-spacing: 1px;
+  -webkit-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  -moz-box-shadow: 0px 5px 40px -10px rgba(0, 0, 0, 0.57);
+  box-shadow: 5px 40px -10px rgba(0, 0, 0, 0.57);
+  transition: all 0.4s ease 0s;
+}
+
+input[type="text"] {
+  width: 35%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  font-family: "Boogaloo", sans-serif, cursive;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  background: #f5f5f5;
+  border-radius: 20px;
+  box-shadow: 0 0 3em rgba(0, 0, 0, 0.3);
+  margin: 0 auto;
+  max-width: 1200px;
+  overflow: hidden;
+  position: relative;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.wrapper .content {
+  padding: 50px;
+  position: relative;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-areas:
+    ". title title noose"
+    "baseimg baseimg . noose"
+    "baseimg baseimg . noose"
+    "baseimg baseimg . noose"
+    "baseimg baseimg inputletter inputletter "
+    " current livesleft livesleft  incorrect";
+}
+
+#baseimg {
+  grid-area: baseimg;
+  align-self: center;
+  justify-self: center;
+  display: block;
+}
+
+#noose {
+  grid-area: noose;
+  background: url("wincnoose.png");
+  background-position: center;
+  background-size: cover;
+}
+
+#livesleft {
+  grid-area: livesleft;
+  align-self: center;
+  justify-self: center;
+}
+
+#inputletter {
+  grid-area: inputletter;
+  align-self: center;
+  justify-self: center;
+}
+
+.title {
+  grid-area: title;
+  text-align: center;
+}
+
+#current {
+  grid-area: current;
+  align-self: center;
+  justify-self: center;
+}
+
+#incorrect {
+  grid-area: incorrect;
+  align-self: center;
+  justify-self: center;
+}
+/* #youwin {
+  grid-area: win;
+  align-self: center;
+  justify-self: center;
+} */
+
+.wrapper:before {
+  background: #4d69fa;
+  bottom: -250px;
+  content: "";
+  height: 500px;
+  position: absolute;
+  right: -250px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  width: 500px;
+}
+
+.credits {
+  color: #f5f5f5;
+  display: block;
+  margin-top: 20px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  text-align: center;
+  text-decoration: none;
+}
+.credits:hover,
+.credits:active {
+  color: #ffba00;
+}
+
+.win {
+  grid-area: baseimg;
+  align-self: center;
+  justify-self: center;
+  display: none;
+}
+
+.lose {
+  grid-area: baseimg;
+  margin-top: 50px;
+  align-self: center;
+  justify-self: center;
+  display: none;
+}
+/* .win h2 {
+  color: red;
+}
+
+.lose h2 {
+  color: blue;
+} */

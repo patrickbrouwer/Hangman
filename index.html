@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<title>Hangman</title>
+		<link rel="stylesheet" type="text/css" href="style.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+		/>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div class="content">
+				<div class="title">
+					<h1>Simple 'Hangman' Game</h1>
+					<p>[no people will actually be harmed during this game]</p>
+				</div>
+
+				<div id="noose"></div>
+
+				<div id="baseimg">
+					<img src="wannaplay.jpg" width="317" ; height="380" />
+				</div>
+
+				<div id="youwin" class="win animated jackInTheBox">
+					<img src="happyman.jpg" />
+				</div>
+
+				<div class="lose animated swing">
+					<img src="lost.gif" />
+					<p>The chosen word was: <span></span></p>
+				</div>
+				<div id="inputletter">
+					<input type="text" placeholder="Guess a letter" maxlength="1" />
+					<button class="guess">Guess</button>
+					<button class="restart">Restart</button>
+				</div>
+				<div id="current">
+					<h2>Current word:</h2>
+					<div class="the_word">_ _ _ _ _</div>
+				</div>
+				<div id="incorrect">
+					<h3>Incorrectly guessed letters:</h3>
+					<div class="guessed_letters"></div>
+				</div>
+				<p id="livesleft" class="lives">
+					You have <span></span> lives remaining
+				</p>
+			</div>
+		</div>
+		<div class="credits">Created by Jeroen N. and Patrick B.</div>
+		<script type="text/javascript" src="script.js"></script>
+	</body>
+</html>
